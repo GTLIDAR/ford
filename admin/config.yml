@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded media files are stored
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# Define what content can be edited in the CMS
+collections:
+  # ── Site Content (single file) ──────────────────
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - name: "main_content"
+        label: "Main Page Content"
+        file: "_data/site_content.yml"
+        fields:
+          # Hero
+          - label: "Hero Title"
+            name: "hero_title"
+            widget: "string"
+
+          - label: "Teaser Image"
+            name: "teaser_image"
+            widget: "image"
+
+          - label: "Teaser Video"
+            name: "teaser_video"
+            widget: "string"
+
+          # Paper
+          - label: "Paper Title"
+            name: "paper_title"
+            widget: "string"
+
+          # Authors
+          - label: "Authors"
+            name: "authors"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Affiliations", name: "affiliations", widget: "string" }
+              - { label: "Equal Contribution", name: "equal", widget: "boolean", default: false }
+
+          # Affiliations
+          - label: "Affiliations"
+            name: "affiliations"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+
+          # Abstract
+          - label: "Abstract"
+            name: "abstract"
+            widget: "text"
+
+          # Links
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Icon Class", name: "icon", widget: "string" }
+
+          # Method
+          - label: "Method Image"
+            name: "method_image"
+            widget: "image"
+
+          - label: "Method Description"
+            name: "method_description"
+            widget: "text"
+
+          # BibTeX
+          - label: "BibTeX"
+            name: "bibtex"
+            widget: "text"
+
+  # ── Editable Pages (for adding new sections) ────
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

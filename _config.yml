@@ -1,0 +1,9 @@
+title: "ReLIC"
+description: "Versatile Loco-Manipulation through Flexible Interlimb Coordination"
+baseurl: "/relic-project"
+url: "https://YOUR-USERNAME.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag

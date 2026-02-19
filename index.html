@@ -1,0 +1,75 @@
+---
+layout: default
+title: "ReLIC"
+---
+
+{% assign d = site.data.site_content %}
+
+<!-- ════════ HERO ════════ -->
+<header class="hero">
+  <div class="hero-logo">ReLIC</div>
+  <div class="hero-teaser">
+    <img src="{{ site.baseurl }}{{ d.teaser_image }}" alt="ReLIC teaser" />
+  </div>
+  <h1><span>ReLIC</span> — {{ d.paper_title }}</h1>
+  <a href="#main" class="scroll-hint" aria-label="Scroll down">↓</a>
+</header>
+
+<!-- ════════ MAIN ════════ -->
+<main id="main" class="container">
+
+  <!-- Authors -->
+  <section class="authors-section fade-up">
+    <p class="paper-title">{{ d.paper_title }}</p>
+
+    <div class="author-list">
+      {% for author in d.authors %}
+        <a href="{{ author.url }}">{{ author.name }}</a><sup>{% if author.equal %}*{% endif %}{{ author.affiliations }}</sup>{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </div>
+
+    <p class="affiliations">
+      {% for aff in d.affiliations %}
+        <sup>{{ aff.id }}</sup>{{ aff.name }}{% unless forloop.last %} &nbsp;&nbsp; {% endunless %}
+      {% endfor %}
+    </p>
+    <p class="equal-note">*These authors contributed equally to this work</p>
+
+    <!-- Links -->
+    <div class="links-bar">
+      {% for link in d.links %}
+        <a class="link-btn" href="{{ link.url }}"><i class="{{ link.icon }}"></i> {{ link.label }}</a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="fade-up">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">{{ d.abstract }}</p>
+  </section>
+
+  <!-- Methods -->
+  <section class="fade-up">
+    <h2 class="section-title">Methods</h2>
+    <div class="method-image">
+      <img src="{{ site.baseurl }}{{ d.method_image }}" alt="ReLIC method overview" />
+    </div>
+    <p class="video-caption"><strong>{{ d.method_description }}</strong></p>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="fade-up">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-block">
+      <button class="copy-btn" onclick="copyBibtex()" id="copyBtn">Copy</button>
+      <pre id="bibtexCode">{{ d.bibtex }}</pre>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>Some website materials are adapted from <a href="https://www.videomimic.net/">VideoMimic</a> and <a href="https://transic-robot.github.io/">TRANSIC</a>.</p>
+</footer>

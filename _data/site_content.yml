@@ -1,0 +1,70 @@
+hero_title: "ReLIC — Versatile Loco-Manipulation through Flexible Interlimb Coordination"
+teaser_image: "/assets/images/teaser_poster.jpg"
+teaser_video: "/assets/videos/teaser_ball_3x_compressed.mp4"
+
+paper_title: "Versatile Loco-Manipulation through Flexible Interlimb Coordination"
+
+authors:
+  - name: "Xinghao Zhu"
+    url: "https://rolandzhu.github.io/"
+    affiliations: "1"
+    equal: true
+  - name: "Yuxin Chen"
+    url: "https://thomaschen98.github.io/"
+    affiliations: "1,2"
+    equal: true
+  - name: "Lingfeng Sun"
+    url: "https://lingfeng.moe/"
+    affiliations: "1"
+    equal: true
+  - name: "Farzad Niroui"
+    url: "https://www.linkedin.com/in/niroui/"
+    affiliations: "1"
+    equal: false
+  - name: "Simon Le Cleac'h"
+    url: "https://simon-lc.github.io/"
+    affiliations: "1"
+    equal: false
+  - name: "Jiuguang Wang"
+    url: "https://www.robo.guru/"
+    affiliations: "1"
+    equal: false
+  - name: "Kuan Fang"
+    url: "https://kuanfang.github.io/"
+    affiliations: "1,3"
+    equal: false
+
+affiliations:
+  - id: "1"
+    name: "RAI Institute"
+  - id: "2"
+    name: "University of California, Berkeley"
+  - id: "3"
+    name: "Cornell University"
+
+abstract: "The ability to flexibly leverage limbs for loco-manipulation is essential for enabling autonomous robots to operate in unstructured environments. Yet, prior work on loco-manipulation is often constrained to specific tasks or predetermined limb configurations. In this work, we present ReLIC, an approach that enables versatile loco-manipulation through flexible interlimb coordination. The key to our approach is an adaptive controller that seamlessly bridges the execution of manipulation motions and the generation of stable gaits based on task demands. Through the interplay between two controller modules, ReLIC dynamically assigns each limb for manipulation or locomotion and robustly coordinates them to achieve the task success. Using efficient reinforcement learning in simulation, ReLIC learns to perform stable gaits in accordance with the manipulation goals in the real world. To solve diverse and complex tasks, we further propose to interface the learned controller with different types of task specifications, including target trajectories, contact points, and natural language instructions. Evaluated on 12 real-world tasks that require diverse and complex coordination patterns, ReLIC demonstrates its versatility and robustness by achieving a success rate of 78.9% on average."
+
+links:
+  - label: "PDF"
+    url: "/assets/relic-locoman.pdf"
+    icon: "fa-solid fa-file-pdf"
+  - label: "arXiv"
+    url: "https://www.arxiv.org/abs/2506.07876"
+    icon: "ai ai-arxiv"
+  - label: "Code"
+    url: "https://github.com/bdaiinstitute/relic"
+    icon: "fa-brands fa-github"
+  - label: "Blogpost"
+    url: "https://rai-inst.com/resources/blog/reinforcement-learning-for-flexible-loco-manipulation/"
+    icon: "fa-solid fa-blog"
+
+method_image: "/assets/images/method.gif"
+method_description: "Reinforcement Learning for Interlimb Coordination (ReLIC): Based on various types of task specifications, ReLIC enables the robot to perform versatile loco-manipulation. Conditioned on the dynamic assignment of limb functions, the ReLIC controller generates actions through the interplay between a model-based module that prioritizes task success, and an RL policy that robustly maintains stable gaits in accordance with the manipulation behaviors."
+
+bibtex: |
+  @article{2025relic,
+    title={ReLIC: Versatile Loco-Manipulation through Flexible Interlimb Coordination},
+    author={Zhu, Xinghao and Chen, Yuxin and Sun, Lingfeng and Niroui, Farzad and Le Cleac'h, Simon and Wang, Jiuguang and Fang, Kuan},
+    journal={arXiv preprint arXiv:2506.07876},
+    year={2025}
+  }
